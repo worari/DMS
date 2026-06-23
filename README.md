@@ -2,7 +2,8 @@
 
 ระบบจัดการหนี้สินกำลังพล ทบ. (สปบ.กพ.ทบ.) พัฒนาด้วย Google Apps Script + React 19  
 **ฐานข้อมูล:** Google Sheets  
-**Repository:** https://github.com/worari/DMS.git
+**Repository:** https://github.com/worari/DMS.git  
+**Web App URL (Production):** https://script.google.com/macros/s/AKfycbwfUO-ImRg744IMSVSKVan0Vz9gfPKaj7htduSoJRX7v6Ah_2pE_Y55H0iv6ijFFnOcIg/exec
 
 ---
 
