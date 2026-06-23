@@ -3,7 +3,7 @@
 
 function doGet(e) {
   console.log("doGet() ถูกเรียกใช้งาน");
-  return HtmlService.createHtmlOutputFromFile('Index')
+  return HtmlService.createHtmlOutputFromFile('index')
     .setTitle('ระบบจัดการหนี้สินกำลังพล (DMS)')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1')
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
