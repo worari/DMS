@@ -3,10 +3,24 @@
 
 function doGet(e) {
   console.log("doGet() ถูกเรียกใช้งาน");
-  return HtmlService.createHtmlOutputFromFile('index')
-    .setTitle('ระบบจัดการหนี้สินกำลังพล (DMS)')
-    .addMetaTag('viewport', 'width=device-width, initial-scale=1')
-    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+  try {
+    return HtmlService.createHtmlOutputFromFile('index')
+      .setTitle('ระบบจัดการหนี้สินกำลังพล (DMS)')
+      .addMetaTag('viewport', 'width=device-width, initial-scale=1')
+      .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+  } catch(e) {
+    console.error("Error loading index.html: " + e.message);
+    // Fallback: return inline HTML error page
+    return HtmlService.createHtmlOutput(
+      '<html><head><meta charset="UTF-8"><title>DMS - Error</title></head>' +
+      '<body style="font-family:sans-serif;padding:40px;text-align:center;">' +
+      '<h1>⚠️ ระบบกำลังอยู่ในระหว่างการติดตั้ง</h1>' +
+      '<p>กรุณา Push ไฟล์ <code>index.html</code> ขึ้น Google Apps Script ก่อน</p>' +
+      '<pre style="text-align:left;background:#f5f5f5;padding:20px;">cd ~/project\nclasp push</pre>' +
+      '<p>หรือติดตั้งผ่าน <a href="https://github.com/worari/DMS">GitHub</a></p>' +
+      '</body></html>'
+    ).setTitle('ระบบจัดการหนี้สินกำลังพล (DMS)');
+  }
 }
 
 const DB_USERS = 'Users';
