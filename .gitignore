@@ -14,8 +14,6 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Google Apps Script
-.clasp.json
-.claspignore
+# Google Apps Script temp files
 ~*.gslides
 ~*.gsheet
